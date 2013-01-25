@@ -1,0 +1,21 @@
+@import "variable";
+@import "twitter/awesome-bootstrap";
+@import "gko/public/base";
+
+a:focus,
+.btn:focus {
+  outline: 0;
+}
+
+#wrapper-wide-body {
+	max-width: 980px;
+	@include box-sizing(border-box);
+	@include center-block();
+}
+
+/*-----------------------------------------
+ RESPONSIVE
+----------------------------------------- */
+
+@import "twitter/bootstrap/responsive";
+@import "gko/default_responsive";
