@@ -1,30 +1,31 @@
 GIT
   remote: git@github.com:jdfdesign/gko_cms3.git
-  revision: b7eca1eb4ab765a596d59d182c2794e607f6f2ee
+  revision: 0bc6060844985a8543f756c82674084e71306d84
+  branch: master
   specs:
-    gko_auth (0.6.23)
-      cancan (>= 1.6.8)
-      devise (>= 2.1.2)
-    gko_blog (0.6.23)
-      gko_categories (= 0.6.23)
-      gko_core (= 0.6.23)
-      gko_stickers (= 0.6.23)
-    gko_categories (0.6.23)
-    gko_core (0.6.23)
+    gko_blog (1.0.00)
+      gko_categories (= 1.0.00)
+      gko_core (= 1.0.00)
+      gko_stickers (= 1.0.00)
+    gko_categories (1.0.00)
+    gko_core (1.0.00)
       RedCloth (= 4.2.9)
       activesupport-slices (= 0.0.2)
       acts_as_indexed (~> 0.7.7)
       babosa (~> 0.3.8)
       backup (~> 3.0.24)
+      cancan (>= 1.6.8)
       capistrano
       carrierwave
       codemirror-rails (>= 2.3)
       coffee-rails (~> 3.2.2)
       cucumber (~> 1.1.4)
+      devise (>= 2.1.2)
       dragonfly (~> 0.9.12)
       dropbox-sdk (~> 1.2.0)
       exception_notification (~> 3.0.0)
       faker (= 1.0.0)
+      filters_spam (~> 0.2)
       gem-patching (= 0.0.3)
       globalize3 (= 0.2.0)
       gon (~> 4.0.0)
@@ -53,14 +54,8 @@ GIT
       uglifier (>= 1.0.3)
       uuid (= 2.3.5)
       will_paginate (~> 3.0.2)
-    gko_documents (0.6.23)
-      dragonfly (~> 0.9.8)
-      rack-cache (>= 0.5.3)
-    gko_images (0.6.23)
-    gko_inquiries (0.6.23)
-      filters_spam (~> 0.2)
-    gko_portfolio (0.6.23)
-    gko_stickers (0.6.23)
+    gko_portfolio (1.0.00)
+    gko_stickers (1.0.00)
 
 GEM
   remote: http://rubygems.org/
@@ -303,13 +298,9 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.2)
-  gko_auth!
   gko_blog!
   gko_categories!
   gko_core!
-  gko_documents!
-  gko_images!
-  gko_inquiries!
   gko_portfolio!
   gko_stickers!
   sass-rails (~> 3.2.6)
