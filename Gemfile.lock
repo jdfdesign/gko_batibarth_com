@@ -1,14 +1,14 @@
 GIT
   remote: git@github.com:jdfdesign/gko_cms3.git
-  revision: 3fa21ffa6b8bec415efed5f4f87aa38241420b1f
+  revision: c7c02243277d679f94a6b18234b033511d5f81c6
   branch: master
   specs:
-    gko_blog (1.0.00)
-      gko_categories (= 1.0.00)
-      gko_core (= 1.0.00)
-      gko_stickers (= 1.0.00)
-    gko_categories (1.0.00)
-    gko_core (1.0.00)
+    gko_blog (1.0.01)
+      gko_categories (= 1.0.01)
+      gko_core (= 1.0.01)
+      gko_stickers (= 1.0.01)
+    gko_categories (1.0.01)
+    gko_core (1.0.01)
       RedCloth (= 4.2.9)
       activesupport-slices (= 0.0.2)
       acts_as_indexed (~> 0.7.7)
@@ -54,8 +54,8 @@ GIT
       uglifier (>= 1.0.3)
       uuid (= 2.3.5)
       will_paginate (~> 3.0.2)
-    gko_portfolio (1.0.00)
-    gko_stickers (1.0.00)
+    gko_portfolio (1.0.01)
+    gko_stickers (1.0.01)
 
 GEM
   remote: http://rubygems.org/
