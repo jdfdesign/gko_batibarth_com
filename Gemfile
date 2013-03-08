@@ -12,7 +12,10 @@ group :production do
 	  gem "gko_categories"
 	  gem "gko_stickers"
 	  gem "gko_blog"
-	  gem "gko_portfolio"
+	  gem "gko_portfolio" 
+	  gem "gko_twits"
+	  gem "gko_twits"
+	  gem "gko_features"
 	end
 end
 #group :development do
@@ -21,4 +24,6 @@ end
 #  gem "gko_categories", :path => '~/Github/gko_cms3/gko_categories'
 #  gem "gko_blog", :path => '~/Github/gko_cms3/gko_blog'
 #  gem "gko_portfolio", :path => '~/Github/gko_cms3/gko_portfolio'
+#  gem "gko_twits", :path => '~/Github/gko_cms3/gko_twits'
+#  gem "gko_features", :path => '~/Github/gko_cms3/gko_features'
 #end

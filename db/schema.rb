@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130128090348) do
+ActiveRecord::Schema.define(:version => 20130308142824) do
 
   create_table "accounts", :force => true do |t|
     t.string   "reference",  :limit => 40
@@ -200,6 +200,44 @@ ActiveRecord::Schema.define(:version => 20130128090348) do
     t.string   "document_ext"
   end
 
+  create_table "feature_translations", :force => true do |t|
+    t.integer  "feature_id"
+    t.string   "locale"
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "feature_translations", ["feature_id"], :name => "index_feature_translations_on_feature_id"
+  add_index "feature_translations", ["locale"], :name => "index_feature_translations_on_locale"
+
+  create_table "features", :force => true do |t|
+    t.integer  "site_id"
+    t.integer  "section_id"
+    t.integer  "owner_id"
+    t.string   "owner_type"
+    t.string   "url"
+    t.string   "title"
+    t.text     "body"
+    t.datetime "published_at"
+    t.integer  "position",        :default => 1
+    t.string   "image_mime_type"
+    t.string   "image_name"
+    t.integer  "image_size"
+    t.integer  "image_width"
+    t.integer  "image_height"
+    t.string   "image_uid"
+    t.string   "image_ext"
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.date     "start_at"
+    t.date     "end_at"
+  end
+
+  add_index "features", ["owner_type", "owner_id"], :name => "index_features_on_owner_type_and_owner_id"
+  add_index "features", ["position", "section_id"], :name => "index_features_on_position_and_section_id"
+
   create_table "image_assignments", :force => true do |t|
     t.integer  "position",                      :default => 1, :null => false
     t.integer  "image_id",                                     :null => false
@@ -307,6 +345,13 @@ ActiveRecord::Schema.define(:version => 20130128090348) do
   end
 
   add_index "mail_methods", ["site_id"], :name => "index_mail_methods_on_site_id"
+
+  create_table "newsletter_subscriptions", :force => true do |t|
+    t.integer  "site_id"
+    t.string   "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "partner_translations", :force => true do |t|
     t.integer  "partner_id"
@@ -478,6 +523,7 @@ ActiveRecord::Schema.define(:version => 20130128090348) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "path"
   end
 
   add_index "sticker_translations", ["locale"], :name => "index_sticker_translations_on_locale"
@@ -489,6 +535,7 @@ ActiveRecord::Schema.define(:version => 20130128090348) do
     t.integer  "section_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "path"
   end
 
   add_index "stickers", ["name"], :name => "index_stickers_on_name"
@@ -514,6 +561,28 @@ ActiveRecord::Schema.define(:version => 20130128090348) do
   end
 
   add_index "tokenized_permissions", ["permissable_id", "permissable_type"], :name => "index_tokenized_name_and_type"
+
+  create_table "twit_translations", :force => true do |t|
+    t.integer  "twit_id"
+    t.string   "locale"
+    t.text     "body"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "twit_translations", ["locale"], :name => "index_twit_translations_on_locale"
+  add_index "twit_translations", ["twit_id"], :name => "index_twit_translations_on_twit_id"
+
+  create_table "twits", :force => true do |t|
+    t.integer  "account_id"
+    t.integer  "section_id"
+    t.integer  "site_id"
+    t.text     "body"
+    t.date     "published_at"
+    t.date     "expire_at"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.integer  "account_id"
