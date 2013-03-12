@@ -32,13 +32,13 @@ $purple:                #7a43b6;
 
 // Scaffolding
 // -------------------------
-$bodyBackground:        $white;
+$bodyBackground:        $grayLighter; //$white;
 $textColor:             $grayDark;
 
 
 // Links
 // -------------------------
-$linkColor:             #08c;
+$linkColor:             $themeColor; //#08c;
 $linkColorHover:        darken($linkColor, 15%);
 
 

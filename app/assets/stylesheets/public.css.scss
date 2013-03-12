@@ -1,3 +1,5 @@
+$themeColor: #292c78;
+
 @import "variable";
 @import "twitter/awesome-bootstrap";
 @import "gko/public/base";
@@ -7,16 +9,187 @@ a:focus,
 .btn:focus {
   outline: 0;
 }
-
-#wrapper-wide-body {
+html {
+	height: 100%;
+}
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+#wrapper-wide-body { 
+	background: $white; 
 	max-width: 980px;
 	@include box-sizing(border-box);
-	@include center-block();
+	@include center-block;
+}
+/*-----------------------------------------
+ HOME
+----------------------------------------- */
+#recent-twits {
+	background-color: $themeColor;
+  color: $white; 
+  text-align: center;
+p {
+	margin: $baseLineHeight 0 $baseLineHeight;
+} 
+} 
+.carousel {
+margin-bottom: $baseLineHeight;
+} 
+#recent-works h3, #recent-posts h3 {
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: $baseFontSize;
+	margin: 0; 
+}
+/*-----------------------------------------
+ HEADER
+----------------------------------------- */
+.navbar {
+	margin-bottom: 0;
+
+	//background-image: asset-url("blue_linen_v2.jpg", image);
+	.navbar-inner {
+		background: none;
+		border: none;
+		border-bottom: 1px solid $navbarBorder;
+		@include border-radius(none);
+	}
+	.brand {
+		float: none;
+		position: relative;
+		letter-spacing: 4px;
+		text-align: center;
+		text-transform: uppercase;
+		line-height: 20px;
+		font-weight: 300;
+		font-size: 20px;
+		margin: 0;
+		padding: 8px 0;
+		a {
+			color: $navbarBrandColor;
+			cursor: pointer;
+			padding: 0;
+			margin: 0 auto;
+			background: transparent image-url("logo.png") center center no-repeat;
+			text-decoration: none;
+			display: block;
+			@include size(79px,252px);
+			@include hide-text;
+			overflow: hidden;
+			&:hover {
+				color: $white;
+				text-decoration: none;
+			};
+		}
+	}
+	#primary-menu .nav {
+		@include center-nav;
+		text-transform: uppercase;
+		font-size: $baseFontSize - 2;
+	}
 }
 
+/*-----------------------------------------
+ FOOTER
+----------------------------------------- */
+footer {
+	margin-top: $baseLineHeight * 2;
+}
+.nav-menu.pipe {
+  @include center-nav;  
+}
+.row-fluid-header { 
+	border-top: $black solid 6px;
+	background-color: $themeColor;
+  color: $white; 
+  text-align: center;
+  margin: 0 0 $baseLineHeight 0;
+  padding: 40px 0; 
+	display: table;
+	width: 100%;
+    vertical-align: middle 
+}
+.page-title {
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: $baseFontSize * 1.5;
+	margin: 0; 
+	//line-height: $baseFontSize * 4;   
+} 
+/*.page-title:before {
+	color: $themeColor;
+	font-size: 60px; 
+	font-weight: normal;
+	vertical-align: middle;
+	width: 0; 
+	height: 0; 
+	border-top: 60px solid transparent;
+	border-bottom: 0px solid transparent;
+	border-left: 30px solid $themeColor; 
+	display: inline-block;
+	vertical-align: top;
+	content: "";
+} */
+/*-----------------------------------------
+ GRID
+----------------------------------------- */
+.thumbnail { 
+	padding: 0;
+	border: none;
+	@include border-radius(none);
+	@include box-shadow(none);
+	.caption {
+		padding-left: 0; 
+		padding-right: 0;
+	}
+	.image {
+		border: 1px solid darken($bodyBackground, 5%); 
+	}
+	.title {
+		font-size: $baseFontSize;
+		line-height: $baseLineHeight;
+		text-transform: uppercase;
+		margin: 0;
+		a {
+			&:hover {
+				text-decoration: none;
+			};
+		}
+		
+	}
+	
+	.links {
+		display: none;
+	}
+	&:hover {
+		@include opacity(85);
+	};
+}
 /*-----------------------------------------
  RESPONSIVE
 ----------------------------------------- */
 
 @import "twitter/bootstrap/responsive";
 @import "gko/default_responsive";
+
+@media (min-width: 980px) {
+	#wrapper-wide-body { 
+		
+		min-height: 100%;
+	}
+	#main-container {
+		padding-left: 0; 
+		padding-right: 0;
+	}
+	.row-fluid-body {
+	   	padding-left: 20px; 
+		padding-right: 20px;
+		@include box-sizing(border-box); 
+	}
+	.nav-collapse {
+	   margin-top: $baseLineHeight;
+	}
+	
+}	

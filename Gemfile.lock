@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:jdfdesign/gko_cms3.git
-  revision: 9a47a4859f2a6f7fb1b2c7e1154e59e5b0515857
+  revision: 2d0475bd2270a992e60a3a5afcdb27ea74cd3d7b
   branch: master
   specs:
     gko_blog (1.0.01)
@@ -273,7 +273,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     truncate_html (0.5.5)
-    tzinfo (0.3.36)
+    tzinfo (0.3.37)
     uglifier (1.3.0)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)

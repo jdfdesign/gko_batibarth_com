@@ -14,7 +14,6 @@ group :production do
 	  gem "gko_blog"
 	  gem "gko_portfolio" 
 	  gem "gko_twits"
-	  gem "gko_twits"
 	  gem "gko_features"
 	end
 end
