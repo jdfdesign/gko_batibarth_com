@@ -1,16 +1,29 @@
-<section>
-  <div class='row-fluid'>
-	<div class='span12'>
-  		<%= render_collection_header %> 
-	</div>
+<%= container_tag('header') do %>
+  <div class='span12'>
+    <%= render_page_title(parent.title) %>
+    <%= render_html_text(parent.body) %> 
+  </div> 
+<% end %>
+<%= container_tag('body') do %>
+  <div class='span8 grid-post grid-post-porfolio'>
+  <% if collection.any? %>
+    <%# if parent.column_count > 1 %>
+      <% column_clazz = 12 / parent.column_count %>
+      <% collection.in_groups_of(parent.column_count, false) do |group|%>
+        <div class='row-fluid'>
+          <%= render group, :clazz => column_clazz %>
+        </div> 
+      <% end %>
+    <%# else %>
+      <%#= render collection, :clazz => 12 %> 
+    <%# end %>
+    <%= render_pagination %>
+  <% else %>
+    <%= render "no_records_found" %>
+  <% end %>
   </div>
-  <div class='row-fluid row-fluid-body'>
-	<div class='span9'>
-  	  	<%= render_collection %>
-	</div>
-	<div class='span3'>
-		<%= render_parent_categories(:title => "Catégories") %>
-	    <%= render_parent_stickers %> 
-	</div>
-  </div>
-</section>
+  <aside class='span4 sidebar'>
+    <%= render_parent_categories(:title => "Catégories") %>
+    <%= render_parent_stickers %> 
+  </aside>
+<% end %>

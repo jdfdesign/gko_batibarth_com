@@ -1,20 +1,20 @@
 <%
-   title = if @category
-             t("#{resource_collection_name}.titles.in_categories", :name => @category.title, :default => parent.title)
-           elsif @tag
-             t("#{resource_collection_name}.titles.tagged", :name => @tag.name, :default => parent.title)
-           else
-             parent.title
-           end
+  title = if @category
+    t("#{resource_collection_name}.titles.in_categories", :name => @category.title, :default => parent.title)
+  elsif @tag
+  t("#{resource_collection_name}.titles.tagged", :name => @tag.name, :default => parent.title)
+  else
+  parent.title
+  end
 %>
-<div class='row-fluid row-fluid-header'>
-	<div class='span12'>
-  		<%= render_page_title(title) %>
-  		<%= render_html_text(parent.body) %>
-	</div>
+<div class='row-fluid '>
+  <div class='span12'>
+    <%= render_page_title(title) %>
+    <%= render_html_text(parent.body) %>
+  </div>
 </div> 
 <div class='row-fluid row-fluid-body'>
-	<div class='span12'>
-		<%= render_slideshow_for(parent) %>
-	</div>
+  <div class='span12'>
+    <%= render_slideshow_for(parent) %>
+  </div>
 </div>

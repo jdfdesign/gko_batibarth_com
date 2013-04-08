@@ -1,0 +1,15 @@
+<div class="carousel-container" id="recent-twits">
+<!-- Carousel nav -->
+<a class="carousel-control left" href="#recent-twits" data-slide="prev">&lsaquo;</a>
+<a class="carousel-control right" href="#recent-twits" data-slide="next">&rsaquo;</a>
+
+<div class="carousel slide">
+  <!-- Carousel items -->
+  <div class="carousel-inner">
+    <% twits.each_with_index do |twit, index| %>
+        <div class="item <%= 'active' if index == 0 %>">
+          <p><%= twit.body.html_safe %></p>
+        </div>
+    <% end %>
+  </div>
+</div>

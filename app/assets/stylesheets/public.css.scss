@@ -1,195 +1,128 @@
 $themeColor: #292c78;
-
+$themeGrayLight: #f3f3f3;
+$themeGrayMedium: #dddddd; 
+$themeGrayDark: #333; 
 @import "variable";
 @import "twitter/awesome-bootstrap";
 @import "gko/public/base";
 @import "flexslider/flexslider";
+@import "header";
+@import "footer";
+@import "home";
+@import "grid"; 
+@import "blog";
+@import "portfolio";
 
-a:focus,
-.btn:focus {
-  outline: 0;
-}
+
+h1 { font-size: $baseFontSize * 2.25; } // ~38px
+h2 { font-size: $baseFontSize * 2; } // ~32px
+h3 { font-size: $baseFontSize * 1.75; } // ~24px
+h4 { font-size: $baseFontSize * 1.25; } // ~18px
+h5 { font-size: $baseFontSize; }
+h6 { font-size: $baseFontSize * 0.85; } // ~12px
+
 html {
 	height: 100%;
 }
 body {
-	margin: 0;
-	padding: 0;
-	height: 100%;
-}
-#wrapper-wide-body { 
-	background: $white; 
+  background: #f6f6f6; 
+} 
+#wrapper-wide-body {
 	max-width: 980px;
-	@include box-sizing(border-box);
 	@include center-block;
+	background-color: #f6f6f6;
 }
-/*-----------------------------------------
- HOME
------------------------------------------ */
-#recent-twits {
-	background-color: $themeColor;
-  color: $white; 
-  text-align: center;
-p {
-	margin: $baseLineHeight 0 $baseLineHeight;
-} 
-} 
-.carousel {
-margin-bottom: $baseLineHeight;
-} 
-#recent-works h3, #recent-posts h3 {
-	font-weight: bold;
-	text-transform: uppercase;
-	font-size: $baseFontSize;
-	margin: 0; 
-}
-/*-----------------------------------------
- HEADER
------------------------------------------ */
-.navbar {
-	margin-bottom: 0;
-
-	//background-image: asset-url("blue_linen_v2.jpg", image);
-	.navbar-inner {
-		background: none;
-		border: none;
-		border-bottom: 1px solid $navbarBorder;
-		@include border-radius(none);
-	}
-	.brand {
-		float: none;
-		position: relative;
-		letter-spacing: 4px;
-		text-align: center;
-		text-transform: uppercase;
-		line-height: 20px;
-		font-weight: 300;
-		font-size: 20px;
-		margin: 0;
-		padding: 8px 0;
-		a {
-			color: $navbarBrandColor;
-			cursor: pointer;
-			padding: 0;
-			margin: 0 auto;
-			background: transparent image-url("logo.png") center center no-repeat;
-			text-decoration: none;
-			display: block;
-			@include size(79px,252px);
-			@include hide-text;
-			overflow: hidden;
-			&:hover {
-				color: $white;
-				text-decoration: none;
-			};
-		}
-	}
-	#primary-menu .nav {
-		@include center-nav;
-		text-transform: uppercase;
-		font-size: $baseFontSize - 2;
-	}
-}
-
-/*-----------------------------------------
- FOOTER
------------------------------------------ */
-footer {
-	margin-top: $baseLineHeight * 2;
-}
-.nav-menu.pipe {
-  @include center-nav;  
-}
-.row-fluid-header { 
-	border-top: $black solid 6px;
-	background-color: $themeColor;
-  color: $white; 
-  text-align: center;
-  margin: 0 0 $baseLineHeight 0;
-  padding: 40px 0; 
-	display: table;
-	width: 100%;
-    vertical-align: middle 
+.outercontainer-header {
+  background-color: $themeGrayLight; 
+  border-bottom: 1px solid $themeGrayMedium;
+  border-top: 1px solid $themeGrayMedium;
+  padding: 20px 0 20px 0;
+  margin-bottom: $baseLineHeight;
 }
 .page-title {
-	font-weight: bold;
-	text-transform: uppercase;
-	font-size: $baseFontSize * 1.5;
-	margin: 0; 
-	//line-height: $baseFontSize * 4;   
-} 
-/*.page-title:before {
-	color: $themeColor;
-	font-size: 60px; 
-	font-weight: normal;
-	vertical-align: middle;
-	width: 0; 
-	height: 0; 
-	border-top: 60px solid transparent;
-	border-bottom: 0px solid transparent;
-	border-left: 30px solid $themeColor; 
-	display: inline-block;
-	vertical-align: top;
-	content: "";
-} */
-/*-----------------------------------------
- GRID
------------------------------------------ */
-.thumbnail { 
-	padding: 0;
-	border: none;
-	@include border-radius(none);
-	@include box-shadow(none);
-	.caption {
-		padding-left: 0; 
-		padding-right: 0;
-	}
-	.image {
-		border: 1px solid darken($bodyBackground, 5%); 
-	}
-	.title {
-		font-size: $baseFontSize;
-		line-height: $baseLineHeight;
-		text-transform: uppercase;
-		margin: 0;
-		a {
-			&:hover {
-				text-decoration: none;
-			};
-		}
-		
-	}
-	
-	.links {
-		display: none;
-	}
-	&:hover {
-		@include opacity(85);
-	};
+  margin: 0;
+  
 }
-/*-----------------------------------------
- RESPONSIVE
------------------------------------------ */
+.sidebar {
+  padding: $baseLineHeight;
+  background-color: $white; 
+  border: 1px solid $themeGrayMedium; 
+  @include border-radius(10px);
+  h3, h4 {
+    color: $themeGrayDark; 
+    text-transform : uppercase;
+    font-size: 12px;
+    margin: 0;
+  }
+}
+ /* RESPONSIVE CSS
+    -------------------------------------------------- */
+@import "twitter/bootstrap/responsive"; 
 
-@import "twitter/bootstrap/responsive";
-@import "gko/default_responsive";
+//
+// Responsive: Large desktop and up
+// --------------------------------------------------
 
-@media (min-width: 980px) {
-	#wrapper-wide-body { 
-		
-		min-height: 100%;
-	}
-	#main-container {
-		padding-left: 0; 
-		padding-right: 0;
-	}
-	.row-fluid-body {
-	   	padding-left: 20px; 
-		padding-right: 20px;
-		@include box-sizing(border-box); 
-	}
-	.nav-collapse {
-	   margin-top: $baseLineHeight;
-	}
-	
-}	
+@media (min-width: 980px) { 
+  body {
+    background: $white image-url("px_by_Gre3g/px_by_Gre3g.png") top left repeat; 
+    width: auto;
+    height: auto;
+    padding: 2.5% 0;
+    margin: 0;
+  }
+  
+  #wrapper-wide-body {
+  	border: 1px solid $black;
+    @include border-radius(10px);
+  }
+
+	.navbar {
+  	margin-bottom: 0;
+    
+  	.nav-collapse {
+  	  clear: both;
+
+  	  .nav { 
+  	    @include center-nav(); 
+  	    margin-top: $baseLineHeight / 2;
+  	    border-top: 1px solid $themeGrayLight; 
+    	  border-bottom: 1px solid $themeGrayLight;
+    	  padding-top: $baseLineHeight / 8; 
+    	  padding-bottom: $baseLineHeight / 8;
+
+    	}
+  	}
+  }
+} 
+
+
+@media (max-width: 979px) { 
+  
+  .navbar {
+  	.brand {
+      margin-bottom: $baseLineHeight / 2;
+    }
+  }
+    
+}
+@media (max-width: 767px) { 
+  
+  // Padding to set content in a bit
+  body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .container-fluid {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+    
+}
+// UP TO LANDSCAPE PHONE
+// ---------------------
+
+@media (max-width: 480px) {
+
+}

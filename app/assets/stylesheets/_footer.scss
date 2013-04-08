@@ -1,0 +1,23 @@
+/*-----------------------------------------
+ FOOTER
+----------------------------------------- */
+#footer {
+	margin-top: $baseLineHeight * 2;
+	text-align: center;
+	padding: 30px 0;
+	.nav {
+	  @include center-nav();
+	}
+} 
+#copyright-container {
+	padding-top: $baseLineHeight; 
+	text-align: center;
+	a.copyright-author {
+		float: none;
+		font-size: 10px;
+	}
+}
+.nav-menu.pipe {
+  @include center-nav;
+  font-size: $baseFontSize - 2; 
+}

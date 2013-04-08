@@ -1,0 +1,12 @@
+.parent-categories {
+  .nav > li {
+      border-bottom: 1px solid #ddd; 
+  }
+  .nav > li > a {
+    padding-bottom: $baseLineHeight / 4;
+    padding-top: $baseLineHeight / 4;
+    &:hover {
+      background-color: transparent;
+    };
+  }
+} 

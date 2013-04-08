@@ -1,0 +1,17 @@
+<%# resource_cache(resource) do %> 
+<article>
+  <%= container_tag('header') do %> 
+  <div class='span12'>
+    <header>
+      <%= render_page_title(resource.title) %>
+    </header><!-- end header -->
+  </div>
+  <% end %>
+  <%= container_tag('body') do %>
+  <div class='span12'>
+    <%= render_slideshow_for(resource) %>
+    <%= render_html_text(resource.body) %>
+  </div>
+  <% end %>          
+</article>
+<%# end %>

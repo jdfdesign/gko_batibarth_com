@@ -1,0 +1,35 @@
+<%# collection_row_cache(post) do %>
+  <article class="span<%= clazz %> grid-post-module grid-post-module-blog" id="<%= dom_id(post) %>"> 
+    <div class='row-fluid'>
+        <div class='span4'>
+          <%= render_record_thumb(post) %> 
+        </div>
+        <div class='span7'>
+	        <header>
+            <%= render_record_title(post) %>
+            <small class="metadatas">
+              <time datetime="<%=l post.published_at.to_date, :format => :default %>" class='posted_at'>
+                <%= t('posts.posted_at', :when => l(post.published_at.to_date, :format => :short)) %>
+              </time>
+              <% if (categories = post.categories).any? %>
+                <%= t('posts.filed_in') %>
+                <%= raw categories.collect { |c| link_to(c.title, [parent, c]) }.to_sentence %>
+              <% end %>
+              <% if post.author_name.present? %>
+                <%= raw(t('posts.posted_by')) %>
+                <span class='author'><%= raw(post.author_name) %></span>
+              <% end %>
+            </small>
+          </header>
+          <!-- end header -->
+          <div class='content'>
+            <%= render_record_description(post) %>
+          </div>
+          <!-- end .entry --> 
+          <footer>
+            <%= link_to t('posts.read_more'), post.public_url, :title => post.title, :class => "btn btn-mini btn-primary btn-more-link" %>
+          </footer>
+        </div>
+      </div>           
+  </article>
+<%# end if post %>

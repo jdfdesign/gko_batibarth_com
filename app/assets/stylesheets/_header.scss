@@ -1,0 +1,75 @@
+/*-----------------------------------------
+ HEADER
+----------------------------------------- */
+
+.navbar {
+	
+	
+	.navbar-inner {
+		border: none; 
+		background: none;
+		padding: $baseLineHeight / 2 20px 0 20px;
+		@include center-block; 
+		@include border-radius(0);
+		@include box-shadow(none);
+	}
+	.row-fluid {
+	   max-width: 1200px; 
+	}
+
+	.brand {
+		float: none;
+		padding: 0;
+		text-align: center;
+		a { 
+		  @include size(80px,261px);
+			@include hide-text;
+			color: $navbarBrandColor;
+			cursor: pointer;
+			padding: 0;
+			margin: 0 auto;
+			background: transparent image-url("logo.png") center center no-repeat;
+			text-decoration: none;
+			display: block;
+			overflow: hidden;
+			&:hover {
+				color: $white;
+				text-decoration: none;
+			};
+		}
+	}
+	.nav {
+	  //@include hide-nav-dropdown-caret; 
+	}
+	.nav > li > a {
+		text-shadow: none;
+		text-transform : uppercase;  
+		font-size: $baseFontSize - 2;
+	} 
+  // The dropdown menu (ul)
+  // ----------------------
+  .dropdown-menu {
+    @include box-shadow(0 5px 10px rgba(0,0,0,.1));
+    margin: 0;
+    li {
+       border-bottom: 1px solid #ddd;
+    }
+    li:last-child {
+       border-bottom: none;
+    };
+  }
+  // Hover state
+  // -----------
+  .dropdown-menu li > a:hover,
+  .dropdown-menu li > a:focus,
+  .dropdown-submenu:hover > a {
+    @include gradient-vertical($dropdownLinkBackgroundHover, $dropdownLinkBackgroundHover);
+  }
+
+  // Active state
+  // ------------
+  .dropdown-menu .active > a,
+  .dropdown-menu .active > a:hover {
+    @include gradient-vertical($dropdownLinkBackgroundActive, $dropdownLinkBackgroundActive);
+  }
+}

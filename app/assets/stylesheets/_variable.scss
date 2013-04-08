@@ -32,28 +32,28 @@ $purple:                #7a43b6;
 
 // Scaffolding
 // -------------------------
-$bodyBackground:        $grayLighter; //$white;
-$textColor:             $grayDark;
+$bodyBackground:        $white;
+$textColor:             $themeGrayDark;//$grayDark;
 
 
 // Links
 // -------------------------
-$linkColor:             $themeColor; //#08c;
-$linkColorHover:        darken($linkColor, 15%);
+$linkColor:             lighten($themeColor, 15%); //#08c;
+$linkColorHover:        lighten($themeColor, 30%);//$textColor;
 
 
 // Typography
 // -------------------------
-$sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
-$serifFontFamily:       Georgia, "Times New Roman", Times, serif;
+$sansFontFamily:        "droid-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serifFontFamily:       "droid-serif", Georgia, "Times New Roman", Times, serif;
 $monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
 
 $baseFontSize:          14px;
-$baseFontFamily:        $sansFontFamily;
-$baseLineHeight:        20px;
+$baseFontFamily:        $sansFontFamily;//$sansFontFamily;
+$baseLineHeight:        24px;
 $altFontFamily:         $serifFontFamily;
 
-$headingsFontFamily:    inherit; // empty to use BS default, $baseFontFamily
+$headingsFontFamily:    $sansFontFamily;//inherit; // empty to use BS default, $baseFontFamily
 $headingsFontWeight:    bold;    // instead of browser default, bold
 $headingsColor:         inherit; // empty to use BS default, $textColor
 
@@ -85,7 +85,7 @@ $tableBorder:                       #ddd; // table and cell border
 // Buttons
 // -------------------------
 $btnBackground:                     $white;
-$btnBackgroundHighlight:            darken($white, 10%);
+$btnBackgroundHighlight:            darken($white, 20%);
 $btnBorder:                         #bbb;
 
 $btnPrimaryBackground:              $linkColor;
@@ -125,10 +125,10 @@ $dropdownDividerTop:            #e5e5e5;
 $dropdownDividerBottom:         $white;
 
 $dropdownLinkColor:             $grayDark;
-$dropdownLinkColorHover:        $white;
+$dropdownLinkColorHover:        $linkColor; //$white;
 $dropdownLinkColorActive:       $dropdownLinkColor;
 
-$dropdownLinkBackgroundActive:  $linkColor;
+$dropdownLinkBackgroundActive:  $white; //$linkColor;
 $dropdownLinkBackgroundHover:   $dropdownLinkBackgroundActive;
 
 
@@ -175,16 +175,16 @@ $navbarCollapseWidth:             979px;
 $navbarCollapseDesktopWidth:      $navbarCollapseWidth + 1;
 
 $navbarHeight:                    40px;
-$navbarBackgroundHighlight:       #ffffff;
-$navbarBackground:                darken($navbarBackgroundHighlight, 5%);
+$navbarBackgroundHighlight:       $themeGrayLight; //#ffffff;
+$navbarBackground:                $themeGrayLight;//darken($navbarBackgroundHighlight, 5%);
 $navbarBorder:                    darken($navbarBackground, 12%);
 
-$navbarText:                      #777;
-$navbarLinkColor:                 #777;
-$navbarLinkColorHover:            $grayDark;
-$navbarLinkColorActive:           $gray;
+$navbarText:                      $textColor;//#777;
+$navbarLinkColor:                 $textColor;//#777;
+$navbarLinkColorHover:            $linkColor;//$grayDark;
+$navbarLinkColorActive:           $linkColor;//$gray;
 $navbarLinkBackgroundHover:       transparent;
-$navbarLinkBackgroundActive:      darken($navbarBackground, 5%);
+$navbarLinkBackgroundActive:      $navbarLinkBackgroundHover;//darken($navbarBackground, 5%);
 
 $navbarBrandColor:                $navbarLinkColor;
 
@@ -302,18 +302,18 @@ $navbarLinkBackground:            transparent;
 // Footer (gko addon)
 // -------------------------
 $footerHeight:                    40px;
-$footerBackground:                $navbarBackground;
-$footerText:                      $navbarText;
-$footerLinkColor:                 $navbarLinkColor;
-$footerLinkBackground:       	  $navbarLinkBackground;
-$footerLinkColorHover:            $navbarLinkColorHover;
-$footerLinkBackgroundHover:       $navbarLinkBackgroundHover;
+$footerBackground:                $themeGrayDark;
+$footerText:                      $white;
+$footerLinkColor:                 $white;
+$footerLinkBackground:       	    transparent;
+$footerLinkColorHover:            $grayLight;
+$footerLinkBackgroundHover:       transparent;
 
 // Copyright (gko addon)
 // -------------------------
 $copyrightHeight:                    40px;
 $copyrightBackground:                $footerBackground;
-$copyrightFontSize:                  $baseFontSize - 2;
+$copyrightFontSize:                  $baseFontSize - 4;
 $copyrightText:                      $footerText;
 $copyrightLinkColor:                 $footerLinkColor;
 $copyrightLinkBackground:            $footerLinkBackground;

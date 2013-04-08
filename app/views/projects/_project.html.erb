@@ -1,0 +1,28 @@
+<%# collection_row_cache(project) do %>
+  <article class="span<%= clazz %> grid-post-module grid-post-module-portfolio" id="<%= dom_id(project) %>"> 
+    <div class='row-fluid'>
+        <div class='span4'>
+          <%= render_record_thumb(project) %> 
+        </div>
+        <div class='span7'>
+	        <header>
+            <%= render_record_title(project) %>
+            <small class="metadatas">
+              <% if (categories = project.categories).any? %>
+                <%= t('projects.filed_in') %>
+                <%= raw categories.collect { |c| link_to(c.title, [parent, c]) }.to_sentence %>
+              <% end %>
+            </small>
+          </header>
+          <!-- end header -->
+          <div class='content'>
+            <%= render_record_description(project) %>
+          </div>
+          <!-- end .entry -->
+          <footer>
+            <%= link_to t('projects.read_more'), project.public_url, :title => project.title, :class => "btn btn-mini btn-primary btn-more-link" %>
+          </footer>
+        </div>
+      </div>           
+  </article>
+<%# end if project %>
