@@ -2,14 +2,14 @@
 //= require jquery_ujs
 //= require gko/public/jquery.bootstrap.navbarhover.js
 //= require gko/public/jquery.grid.responsive.js
-//= require twitter/bootstrap/transition.js
-//= require twitter/bootstrap/alert.js
-//= require twitter/bootstrap/button.js
-//= require twitter/bootstrap/collapse.js
-//= require twitter/bootstrap/dropdown.js
-//= require twitter/bootstrap/modal.js
-//= require twitter/bootstrap/tooltip.js
-//= require twitter/bootstrap/carousel.js
+//= require twitter.bootstrap.2.3.1/bootstrap/transition.js
+//= require twitter.bootstrap.2.3.1/bootstrap/alert.js
+//= require twitter.bootstrap.2.3.1/bootstrap/button.js
+//= require twitter.bootstrap.2.3.1/bootstrap/carousel.js
+//= require twitter.bootstrap.2.3.1/bootstrap/collapse.js
+//= require twitter.bootstrap.2.3.1/bootstrap/tab.js
+//= require twitter.bootstrap.2.3.1/bootstrap/dropdown.js
+//= require twitter.bootstrap.2.3.1/bootstrap/modal.js
 //= require flexslider/jquery.flexslider.js 
 
 var $window, $body, $header, $mainContainer;
@@ -19,7 +19,7 @@ var headerHeight, viewPortHeight, viewPortWidth, availableHeight;
 	var Carousel = {
 
 		init: function() {
-      console.log($('#carousel li').length > 1)
+
 			if ($('#carousel li').length > 1) {
 				// The slider being synced must be initialized first
 				$('#carousel').flexslider({

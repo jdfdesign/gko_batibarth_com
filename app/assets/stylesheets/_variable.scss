@@ -38,8 +38,8 @@ $textColor:             $themeGrayDark;//$grayDark;
 
 // Links
 // -------------------------
-$linkColor:             lighten($themeColor, 15%); //#08c;
-$linkColorHover:        lighten($themeColor, 30%);//$textColor;
+$linkColor:             #0069b4; //#08c;
+$linkColorHover:        lighten(#0069b4, 10%);//$textColor;
 
 
 // Typography

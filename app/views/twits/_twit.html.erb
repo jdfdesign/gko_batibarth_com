@@ -2,8 +2,9 @@
   <article class="span<%= clazz %> grid-post-module grid-post-module-blog" id="<%= dom_id(twit) %>"> 
     <header>
       <small class="metadatas">
-        <time datetime="<%=l twit.published_at.to_date, :format => :default %>" class='twited_at'>
-          <%= t('twits.twited_at', :when => l(twit.published_at.to_date, :format => :short)) %>
+        
+        <time datetime="<%=l twit.published_at.to_date, :format => :default %>" class='posted_at'>
+          <%= t('posts.posted_at', :when => l(twit.published_at.to_date, :format => :short)) %>
         </time>
       </small>
     </header>

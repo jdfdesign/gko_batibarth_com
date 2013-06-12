@@ -1,9 +1,9 @@
-$themeColor: #292c78;
+$themeColor: #2773ae;
 $themeGrayLight: #f3f3f3;
 $themeGrayMedium: #dddddd; 
 $themeGrayDark: #333; 
 @import "variable";
-@import "twitter/awesome-bootstrap";
+@import "twitter.bootstrap.2.3.1/bootstrap";   
 @import "gko/public/base";
 @import "flexslider/flexslider";
 @import "header";
@@ -57,7 +57,7 @@ body {
 }
  /* RESPONSIVE CSS
     -------------------------------------------------- */
-@import "twitter/bootstrap/responsive"; 
+@import "twitter.bootstrap.2.0.4/bootstrap/responsive";  
 
 //
 // Responsive: Large desktop and up

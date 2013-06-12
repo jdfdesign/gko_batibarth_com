@@ -1,22 +1,30 @@
 <%# collection_row_cache(document_item) do %>
-  <article class="span<%= clazz %> grid-post-module grid-post-module-blog" id="<%= dom_id(partner) %>"> 
-    <div class="image <%= 'missing-document-preview' unless document_item.thumbnail.present? %>">
-      <%= link_to(image_tag(document_item.thumbnail.url), document_item.document.url) if document_item.thumbnail.present? %>
-    </div>
-    <header>
-      <%= render_record_title(document_item) %>
-	    <small class="metadatas">
-        <time datetime="<%=l document_item.published_at.to_date, :format => :default %>" class='posted_at'>
-          <%= t('document_item.posted_at', :when => l(document_item.published_at.to_date, :format => :short)) %>
-        </time> 
-        <% if parent.use_country and document_item.country.present? %>
-          <span class='country'><%= document_item.country.name %></span>
-        <% end %>
-      </small>
-    </header>
-    <!-- end header -->
-    <div class='content'>
-      <%= render_record_description(document_item) if parent.use_description %>
+  <article class="span<%= clazz %> grid-post-module grid-post-module-blog" id="<%= dom_id(document_item) %>"> 
+    <div class='row-fluid'>
+      <div class='span3'> 
+        <div class="image <%= 'missing-document-preview' unless document_item.thumbnail.present? %>">
+          <%= link_to(image_tag(document_item.thumbnail.url), document_item.document.url) if document_item.thumbnail.present? %>
+        </div>
+      </div>
+      <div class='span9'>   
+        <header>
+          <h2 class="title"><%= link_to(document_item.title, document_item.document.url) %></h2>
+    	    <small class="metadatas"> 
+    	      <% if parent.use_publication_date && document_item.published_at.present? %>
+            <time datetime="<%=l document_item.published_at.to_date, :format => :default %>" class='posted_at'>
+              <%= t('document_item.posted_at', :when => l(document_item.published_at.to_date, :format => :short)) %>
+            </time>
+            <% end %> 
+            <% if parent.use_country and document_item.country.present? %>
+              <span class='country'><%= document_item.country.name %></span>
+            <% end %>
+          </small>
+        </header>
+        <!-- end header -->
+        <div class='content'>
+          <%= render_record_description(document_item) if parent.use_description %>
+        </div>
+      </div>
     </div>          
   </article>
 <%# end if document_item %>

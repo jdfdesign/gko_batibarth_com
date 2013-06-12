@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130311140659) do
+ActiveRecord::Schema.define(:version => 20130612084943) do
 
   create_table "accounts", :force => true do |t|
     t.string   "reference",  :limit => 40
@@ -203,8 +203,8 @@ ActiveRecord::Schema.define(:version => 20130311140659) do
   create_table "feature_translations", :force => true do |t|
     t.integer  "feature_id"
     t.string   "locale"
-    t.string   "title"
     t.text     "body"
+    t.string   "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -505,6 +505,8 @@ ActiveRecord::Schema.define(:version => 20130311140659) do
     t.boolean  "front_page_cached",        :default => false
     t.integer  "site_registrations_count", :default => 0
     t.text     "mailer_settings"
+    t.text     "stylesheet"
+    t.text     "javascript"
   end
 
   add_index "sites", ["host"], :name => "index_sites_on_host", :unique => true

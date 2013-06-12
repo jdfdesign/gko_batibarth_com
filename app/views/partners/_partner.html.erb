@@ -1,26 +1,32 @@
 <%# collection_row_cache(partner) do %>
-  <article class="span<%= clazz %> grid-post-module grid-post-module-blog" id="<%= dom_id(partner) %>"> 
-    <div class="image">
-      <% if partner.image.present? %>
-      <% if partner.url.present? -%>
-          <%= link_to(image_tag(partner.thumbnail.url), partner.url, :target => :blank, :rel => 'external') %>
-      <% else -%>
-          <%= image_tag(partner.thumbnail.url) %>
-      <% end -%>
-      <% end -%>
-    </div>
-    <header>
-      <h2 class="title">
-	      <% if partner.url.present? -%>
-	          <%= link_to(partner.title, partner.url, :target => :blank, :rel => 'external') %>
-	      <% else -%>
-	          <%= partner.title %>
-	      <% end -%>
-	    </h2>
-    </header>
-    <!-- end header -->
-    <div class='content'>
-      <%= render_html_text(partner.body) %>
-    </div>          
+  <article class="span<%= clazz %> grid-post-module grid-post-module-partner" id="<%= dom_id(partner) %>">
+    <div class='row-fluid'>
+        <div class='span2'> 
+          <div class="image">
+            <% if partner.image.present? %>
+            <% if partner.url.present? -%>
+                <%= link_to(image_tag(partner.thumbnail.url), partner.url, :target => :blank, :rel => 'external') %>
+            <% else -%>
+                <%= image_tag(partner.thumbnail.url) %>
+            <% end -%>
+            <% end -%>
+          </div> 
+        </div>
+        <div class='span10'> 
+          <header>
+            <h2 class="title">
+      	      <% if partner.url.present? -%>
+      	          <%= link_to(partner.title, partner.url, :target => :blank, :rel => 'external') %>
+      	      <% else -%>
+      	          <%= partner.title %>
+      	      <% end -%>
+      	    </h2>
+          </header>
+          <!-- end header -->
+          <div class='content'>
+            <%= render_html_text(partner.body) %>
+          </div> 
+        </div>
+      </div>         
   </article>
 <%# end if partner %>

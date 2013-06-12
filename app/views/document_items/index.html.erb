@@ -5,9 +5,9 @@
   </div> 
 <% end %>
 <%= container_tag('body') do %>
-  <div class='span8 grid-post grid-post-partner'>
+  <div class='span12 grid-post grid-post-partner'>
   <% if collection.any? %>
-      <% column_clazz = 12 / parent.column_count %>
+      <% column_clazz = (12 / parent.column_count).ceil %>
     <% collection.in_groups_of(parent.column_count, false) do |group|%>
       <div class='row-fluid'>
         <%= render group, :clazz => column_clazz %>

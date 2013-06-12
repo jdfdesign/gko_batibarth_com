@@ -5,7 +5,7 @@
   </div> 
 <% end %>
 <%= container_tag('body') do %>
-  <div class='span8 grid-post grid-post-porfolio'>
+  <div class='span12 grid-post grid-post-porfolio'>
   <% if collection.any? %>
     <%# if parent.column_count > 1 %>
       <% column_clazz = 12 / parent.column_count %>
@@ -22,8 +22,4 @@
     <%= render "no_records_found" %>
   <% end %>
   </div>
-  <aside class='span4 sidebar'>
-    <%= render_parent_categories(:title => "Catégories") %>
-    <%= render_parent_stickers %> 
-  </aside>
 <% end %>
