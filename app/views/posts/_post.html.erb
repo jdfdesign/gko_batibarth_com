@@ -1,4 +1,4 @@
-<%# collection_row_cache(post) do %>
+<% collection_row_cache(post) do %>
   <article class="span<%= clazz %> grid-post-module grid-post-module-blog" id="<%= dom_id(post) %>"> 
     <div class='row-fluid'>
         <div class='span4'>
@@ -27,9 +27,11 @@
           </div>
           <!-- end .entry --> 
           <footer>
-            <%= link_to t('posts.read_more'), post.public_url, :title => post.title, :class => "btn btn-mini btn-primary btn-more-link" %>
+            <%= link_to post.public_url, :title => post.title, :class => "btn btn-mini btn-primary btn-more-link" do %>
+              <%= raw "<i class='icon-chevron-right'></i>&nbsp;#{link_to t('posts.read_more')}" %>
+            <% end %>
           </footer>
         </div>
       </div>           
   </article>
-<%# end if post %>
+<% end if post %>

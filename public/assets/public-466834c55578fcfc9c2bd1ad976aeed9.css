@@ -2453,7 +2453,7 @@ table th[class*="span"],
   *margin-right: .3em;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url("/assets/twitter/glyphicons-halflings.png");
+  background-image: url("/assets/twitter/glyphicons-halflings-2851b489e8c39f8fad44fc10efb99c3e.png");
   background-position: 14px 14px;
   background-repeat: no-repeat;
   margin-top: 1px;
@@ -2478,7 +2478,7 @@ table th[class*="span"],
 .dropdown-submenu:focus > a > [class^="icon-"],
 .dropdown-submenu:hover > a > [class*=" icon-"],
 .dropdown-submenu:focus > a > [class*=" icon-"] {
-  background-image: url("/assets/twitter/glyphicons-halflings-white.png");
+  background-image: url("/assets/twitter/glyphicons-halflings-white-6cccd17a7aed91dbc0157d343c68c0d9.png");
 }
 
 /* line 52, ../../../../.rvm/gems/ruby-1.8.7-p370/bundler/gems/gko_cms3-182ad56cd3ec/gko_core/vendor/assets/stylesheets/twitter.bootstrap.2.3.1/bootstrap/_sprites.scss */
@@ -6861,7 +6861,7 @@ aside > section {
 
 /* line 53, ../../../../.rvm/gems/ruby-1.8.7-p370/bundler/gems/gko_cms3-182ad56cd3ec/gko_core/app/assets/stylesheets/gko/public/_default.scss */
 .missing-document-preview {
-  background: transparent url(/assets/gko/icon_pdf_grey_light_x110.png) left center no-repeat;
+  background: transparent url(/assets/gko/icon_pdf_grey_light_x110-d825c44fddb67d9997a6c30644ec1433.png) left center no-repeat;
   min-height: 110px;
 }
 
@@ -7259,7 +7259,7 @@ html[xmlns] .slides {
   height: 30px;
   margin: -20px 0 0;
   display: block;
-  background: url(/assets/flexslider/bg_direction_nav.png) no-repeat 0 0;
+  background: url(/assets/flexslider/bg_direction_nav-3c36224a76ddbcac2e36b643832074cf.png) no-repeat 0 0;
   position: absolute;
   top: 50%;
   cursor: pointer;
@@ -7436,7 +7436,7 @@ html[xmlns] .slides {
   cursor: pointer;
   padding: 0;
   margin: 0 auto;
-  background: transparent url(/assets/logo.png) center center no-repeat;
+  background: transparent url(/assets/logo-f0e00b1926757a2f328b525dec4b0a31.png) center center no-repeat;
   text-decoration: none;
   display: block;
   overflow: hidden;
@@ -8962,7 +8962,7 @@ body {
 @media (min-width: 980px) {
   /* line 88, ../../app/assets/stylesheets/public.css.scss */
   body {
-    background: white url(/assets/px_by_Gre3g/px_by_Gre3g.png) top left repeat;
+    background: white url(/assets/px_by_Gre3g/px_by_Gre3g-1be05f4eb738715f9b0dff09db750c03.png) top left repeat;
     width: auto;
     height: auto;
     padding: 2.5% 0;

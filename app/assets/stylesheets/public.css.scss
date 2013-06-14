@@ -1,7 +1,28 @@
 $themeColor: #2773ae;
 $themeGrayLight: #f3f3f3;
 $themeGrayMedium: #dddddd; 
-$themeGrayDark: #333; 
+$themeGrayDark: #333;
+
+@mixin flat-button() {
+  background: #0069b4 repeat scroll 0 0;
+  border: none;
+  font-weight: 800;
+  @include border-radius(2px);
+  @include box-shadow(none);
+  color: #FFFFFF;
+  text-decoration: none;
+  text-shadow: none;
+  padding: 8px 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  &:hover { 
+    background: lighten(#0069b4, 10%) repeat scroll 0 0;
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: all 0.35s ease-in-out;
+  }
+}
+ 
 @import "variable";
 @import "twitter.bootstrap.2.3.1/bootstrap";   
 @import "gko/public/base";
