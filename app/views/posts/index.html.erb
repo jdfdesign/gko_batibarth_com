@@ -7,16 +7,12 @@
 <%= container_tag('body') do %>
   <div class='span8 grid-post grid-post-porfolio'>
   <% if collection.any? %>
-    <%# if parent.column_count > 1 %>
-      <% column_clazz = 12 / parent.column_count %>
-      <% collection.in_groups_of(parent.column_count, false) do |group|%>
-        <div class='row-fluid'>
-          <%= render group, :clazz => column_clazz %>
-        </div> 
-      <% end %>
-    <%# else %>
-      <%#= render collection, :clazz => 12 %> 
-    <%# end %>
+    <% column_clazz = 12 / parent.column_count %>
+    <% collection.in_groups_of(parent.column_count, false) do |group|%>
+    <div class='row-fluid'>
+      <%= render group, :clazz => column_clazz %>
+    </div> 
+    <% end %>
     <%= render_pagination %>
   <% else %>
     <%= render "no_records_found" %>
